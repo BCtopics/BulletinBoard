@@ -13,6 +13,10 @@
 		6BD35EFA1EAFABFE007787C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD35EF81EAFABFE007787C5 /* LaunchScreen.storyboard */; };
 		6BD35F061EAFADAC007787C5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD35F051EAFADAC007787C5 /* CloudKit.framework */; };
 		6BD35F091EAFB0DB007787C5 /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD35F081EAFB0DB007787C5 /* PostListTableViewController.swift */; };
+		6BD35F0D1EAFB205007787C5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD35F0C1EAFB205007787C5 /* Post.swift */; };
+		6BD35F101EAFB2AE007787C5 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD35F0F1EAFB2AE007787C5 /* PostController.swift */; };
+		6BD35F131EAFB367007787C5 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD35F121EAFB367007787C5 /* CloudKitManager.swift */; };
+		6BD35F151EAFBCBC007787C5 /* Post+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD35F141EAFBCBC007787C5 /* Post+CloudKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		6BD35F031EAFADA8007787C5 /* BulletinBoard2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BulletinBoard2.entitlements; sourceTree = "<group>"; };
 		6BD35F051EAFADAC007787C5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6BD35F081EAFB0DB007787C5 /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
+		6BD35F0C1EAFB205007787C5 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6BD35F0F1EAFB2AE007787C5 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		6BD35F121EAFB367007787C5 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		6BD35F141EAFBCBC007787C5 /* Post+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CloudKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,9 @@
 			children = (
 				6BD35F031EAFADA8007787C5 /* BulletinBoard2.entitlements */,
 				6BD35EEF1EAFABFE007787C5 /* AppDelegate.swift */,
+				6BD35F111EAFB323007787C5 /* CloudKit */,
+				6BD35F0B1EAFB1D0007787C5 /* ModelControllers */,
+				6BD35F0A1EAFB1C4007787C5 /* Models */,
 				6BD35F071EAFB0C1007787C5 /* ViewControllers */,
 				6BD35F021EAFAC29007787C5 /* Storyboards */,
 				6BD35F011EAFAC08007787C5 /* Resources */,
@@ -100,6 +111,31 @@
 				6BD35F081EAFB0DB007787C5 /* PostListTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6BD35F0A1EAFB1C4007787C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BD35F0C1EAFB205007787C5 /* Post.swift */,
+				6BD35F141EAFBCBC007787C5 /* Post+CloudKit.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6BD35F0B1EAFB1D0007787C5 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BD35F0F1EAFB2AE007787C5 /* PostController.swift */,
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		6BD35F111EAFB323007787C5 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				6BD35F121EAFB367007787C5 /* CloudKitManager.swift */,
+			);
+			name = CloudKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD35F0D1EAFB205007787C5 /* Post.swift in Sources */,
+				6BD35F101EAFB2AE007787C5 /* PostController.swift in Sources */,
+				6BD35F151EAFBCBC007787C5 /* Post+CloudKit.swift in Sources */,
 				6BD35EF01EAFABFE007787C5 /* AppDelegate.swift in Sources */,
 				6BD35F091EAFB0DB007787C5 /* PostListTableViewController.swift in Sources */,
+				6BD35F131EAFB367007787C5 /* CloudKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
