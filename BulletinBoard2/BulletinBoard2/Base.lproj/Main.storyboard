@@ -33,6 +33,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yci-U4-iPP">
                                             <rect key="frame" x="344" y="0.0" width="31" height="39"/>
                                             <state key="normal" title="Post"/>
+                                            <connections>
+                                                <action selector="postButtonTapped:" destination="JRp-1e-n7G" eventType="touchUpInside" id="ifa-5p-Yqx"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -84,6 +87,9 @@
                             <outlet property="delegate" destination="JRp-1e-n7G" id="d8Y-fo-tgy"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="textField" destination="HX0-am-3qT" id="HqA-x3-T7p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2d-pP-oXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
