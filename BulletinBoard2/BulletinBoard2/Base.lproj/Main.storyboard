@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JRp-1e-n7G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Post List Table View Controller-->
+        <scene sceneID="AaJ-cv-hxg">
+            <objects>
+                <tableViewController id="JRp-1e-n7G" customClass="PostListTableViewController" customModule="BulletinBoard2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aik-qu-aXI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ei1-fG-dk6">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4qr-yD-OXn">
+                                    <rect key="frame" x="0.0" y="14" width="375" height="39"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-am-3qT">
+                                            <rect key="frame" x="0.0" y="0.0" width="324" height="39"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yci-U4-iPP">
+                                            <rect key="frame" x="344" y="0.0" width="31" height="39"/>
+                                            <state key="normal" title="Post"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="yci-U4-iPP" secondAttribute="trailing" id="FLa-RO-eto"/>
+                                        <constraint firstItem="HX0-am-3qT" firstAttribute="leading" secondItem="4qr-yD-OXn" secondAttribute="leading" id="GiN-jg-a89"/>
+                                        <constraint firstAttribute="bottom" secondItem="yci-U4-iPP" secondAttribute="bottom" id="Lsb-iw-Weq"/>
+                                        <constraint firstItem="yci-U4-iPP" firstAttribute="top" secondItem="4qr-yD-OXn" secondAttribute="top" id="Mrk-U7-120"/>
+                                        <constraint firstAttribute="bottom" secondItem="HX0-am-3qT" secondAttribute="bottom" id="OHQ-Xe-8nt"/>
+                                        <constraint firstItem="HX0-am-3qT" firstAttribute="top" secondItem="4qr-yD-OXn" secondAttribute="top" id="zaH-OY-af7"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="4qr-yD-OXn" firstAttribute="top" secondItem="ei1-fG-dk6" secondAttribute="top" constant="14" id="auW-ON-nmY"/>
+                                <constraint firstAttribute="trailing" secondItem="4qr-yD-OXn" secondAttribute="trailing" id="gW6-aH-dTs"/>
+                                <constraint firstItem="4qr-yD-OXn" firstAttribute="leading" secondItem="ei1-fG-dk6" secondAttribute="leading" id="ure-NM-aNM"/>
+                                <constraint firstAttribute="bottom" secondItem="4qr-yD-OXn" secondAttribute="bottom" id="zxJ-xS-TAC"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" textLabel="mMh-Xy-r2Q" detailTextLabel="SJk-xl-Xe5" style="IBUITableViewCellStyleValue1" id="I6Z-ij-VO2">
+                                <rect key="frame" x="0.0" y="81" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I6Z-ij-VO2" id="SpJ-Af-K2J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mMh-Xy-r2Q">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJk-xl-Xe5">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JRp-1e-n7G" id="ghQ-4x-BFo"/>
+                            <outlet property="delegate" destination="JRp-1e-n7G" id="d8Y-fo-tgy"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2d-pP-oXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="122.78860569715144"/>
+        </scene>
+    </scenes>
 </document>
