@@ -8,6 +8,7 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 class PostController {
     
@@ -27,6 +28,20 @@ class PostController {
         fetch()
     }
     
+    func resetBadgeCounter() {
+        let badgeResetOperation = CKModifyBadgeOperation(badgeValue: 0)
+        badgeResetOperation.modifyBadgeCompletionBlock = { (error) -> Void in
+            if error != nil {
+                NSLog("Error resetting badge: \(error)")
+            }
+            else {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+        }
+        CKContainer.default().add(badgeResetOperation)
+    }
+    
+
     
     //Add Posts (Create)
     // Take a completion closure so that we can be notified at the call site when our post method finishes running. 

@@ -41,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PostController.shared.fetch()
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        PostController.shared.resetBadgeCounter()
+    }
+    
     
 }
 
