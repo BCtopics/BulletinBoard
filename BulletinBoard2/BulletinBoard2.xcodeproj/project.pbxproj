@@ -174,7 +174,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -353,6 +353,7 @@
 				CODE_SIGN_ENTITLEMENTS = BulletinBoard2/BulletinBoard2.entitlements;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
 				INFOPLIST_FILE = BulletinBoard2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradleygilmore.BulletinBoard2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +368,7 @@
 				CODE_SIGN_ENTITLEMENTS = BulletinBoard2/BulletinBoard2.entitlements;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
 				INFOPLIST_FILE = BulletinBoard2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradleygilmore.BulletinBoard2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +395,7 @@
 				6BD35F001EAFABFE007787C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

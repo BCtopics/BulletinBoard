@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PostListTableViewController: UITableViewController {
     
@@ -21,11 +22,7 @@ class PostListTableViewController: UITableViewController {
         guard let body = textField.text, !body.isEmpty else { return }
         textField.resignFirstResponder()
         textField.text = ""
-        PostController.shared.post(body: body) { error in
-            if error == nil {
-                self.handleRefresh()
-            }
-        }
+        PostController.shared.post(body: body)
     }
     
     override func viewDidLoad() {
@@ -46,9 +43,24 @@ class PostListTableViewController: UITableViewController {
         return formatter
     }()
 
+    func resetBadgeCounter() {
+        let badgeResetOperation = CKModifyBadgeOperation(badgeValue: 0)
+        badgeResetOperation.modifyBadgeCompletionBlock = { (error) -> Void in
+            if error != nil {
+                NSLog("Error resetting badge: \(error)")
+            }
+            else {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+        }
+        CKContainer.default().add(badgeResetOperation)
+    }
     
     func handleRefresh(){
-        tableView.reloadData()
+        resetBadgeCounter()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }

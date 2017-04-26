@@ -23,6 +23,10 @@ class PostController {
         }
     }
     
+    init() {
+        fetch()
+    }
+    
     
     //Add Posts (Create)
     // Take a completion closure so that we can be notified at the call site when our post method finishes running. 
