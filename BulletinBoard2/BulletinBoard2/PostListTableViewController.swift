@@ -30,7 +30,12 @@ class PostListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        handleRefresh()
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self,
+                       selector: #selector(handleRefresh),
+                       name: PostController.DidRefreshNotification,
+                       object: nil)
     }
     
     let dateFormatter: DateFormatter = {
@@ -43,13 +48,7 @@ class PostListTableViewController: UITableViewController {
 
     
     func handleRefresh(){
-        PostController.shared.fetch { (error) in
-            if error == nil {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        }
+        tableView.reloadData()
     }
     
 }

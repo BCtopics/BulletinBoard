@@ -11,13 +11,15 @@ import CloudKit
 
 class PostController {
     
+    static let DidRefreshNotification = Notification.Name("DidRefreshNotification")
     static let shared = PostController()
     
     private let cloudKitManager = CloudKitManager()
 
     var posts = [Post]() {
         didSet{
-            //Update
+            let nc = NotificationCenter.default
+            nc.post(name: PostController.DidRefreshNotification, object: self)
         }
     }
     
@@ -66,6 +68,20 @@ class PostController {
             
             self.posts = records.flatMap { Post(cloudKitRecord: $0) }
             
+        }
+    }
+    
+    // Subscribe to Posts
+    
+    func subscribeToPosts(completion: @escaping ((Error?) -> Void) = { _ in }) {
+        
+        cloudKitManager.subscribeToCreationOfRecords(ofType: Post.RecordType) { (error) in
+            if let error = error {
+                NSLog("Error saving subscription: \(error)")
+            } else {
+                NSLog("Subscription was successful. You will now be notified of new Posts")
+            }
+            completion(error)
         }
     }
 }
